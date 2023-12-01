@@ -3,6 +3,7 @@ module.exports = function (eleventyConfig) {
     return {
       passthroughFileCopy: true,
       dir:{
+        output:"dist",
         data:"_data"
       }
     };
