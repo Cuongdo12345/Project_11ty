@@ -1,0 +1,18 @@
+---
+layout: layout.njk
+---
+
+<h1>My blog</h1>
+
+<ul>
+{% for post in collections.blog %}
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ul>
+<br>
+
+{# <ul>
+{% for article in newsdata.articles %}
+  <li>{{ article.title }}</li>
+{% endfor %}
+</ul> #}
