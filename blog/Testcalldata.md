@@ -15,8 +15,9 @@ tags: ['blog', 'css']
 {% for article in newsdata.articles %}
   <li>
   <p>{{ article.title }}</p>
-  <span>{{ article.description }}</span>
+  <!-- <span>{{ article.description }}</span> -->
   </li>
+  
 {% endfor %}
 </ul>
 
