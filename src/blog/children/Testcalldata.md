@@ -1,7 +1,9 @@
 ---
-layout: layout.njk
 title: "Test-call-data"
-tags: ['blog', 'css']
+# tags: ['blog', 'css']
+# tags:
+#  -blog
+#  -css
 ---
 
 <div class="container">
@@ -12,13 +14,16 @@ tags: ['blog', 'css']
   </div>
 
 <ul>
-{% for article in newsdata.articles %}
+{% for article in newsdata[0].articles %}
   <li>
-  <p>{{ article.title }}</p>
+    <h4><a href="{{article.url}}">{{article.title}}</a></h4>
+    <span>{{article.source.name}} - <time>{{article.publishedAt}}</time></span>
+  <!-- <p>{{ article.title }}</p> -->
   <!-- <span>{{ article.description }}</span> -->
   </li>
-  
 {% endfor %}
 </ul>
+
+
 
 </div>

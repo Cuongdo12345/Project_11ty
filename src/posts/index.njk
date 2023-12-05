@@ -1,0 +1,46 @@
+---
+title: Posts
+layout: layout.njk
+pagination:
+  data: posts
+  size: 5
+permalink: "/posts/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+{# neu phan trang duong dan nhu nao #}
+
+<h1>My bPostlog</h1>
+<p>
+Powered by 11ty.
+</p>
+
+{# <ol>
+{% for post in posts %}
+  
+  <li><a href="">{{post.title}}</a></li>
+{% endfor %}
+</ol> #}
+
+<h1>Posts</h1>
+
+{# ho tro mac dinh slugify #}
+<ul>
+{% for item in pagination.items %}
+<li>
+  <a href="/posts/{{ item.title | slugify }}">
+  {{ item.title }}
+  </a>
+</li>
+{% endfor %}
+</ul>
+{{page.url}}
+<nav aria-labelledby="my-pagination">
+  <ul>
+    <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
+    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+{%- for pageEntry in pagination.pages %}
+    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a></li>
+{%- endfor %}
+    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+    <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
+  </ul>
+</nav>

@@ -1,7 +1,6 @@
 ---
-layout: layout.njk
 title: "Bộ trưởng quốc phòng"
-tags: ['blog', 'css']
+
 ---
 
 # Bộ trưởng quốc phòng

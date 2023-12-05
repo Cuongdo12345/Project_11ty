@@ -1,7 +1,6 @@
 ---
-layout: layout.njk
-title: "Rèn trí, luyện tài qua diễn tập"
-tags: ['blog', 'css']
+title: Rèn trí, luyện tài qua diễn tập
+description: ""
 ---
 
 # Rèn trí, luyện tài qua diễn tập

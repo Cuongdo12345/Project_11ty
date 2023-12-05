@@ -10,17 +10,28 @@
   <title>{{ title }}</title>
 </head>
 <body>
-    <header>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/blog">Blog</a></li>
-    </ul>
-  </nav>
-</header>
+    
+{# su dung include dung chung #}
+  {% include "partials/header.njk" %}
   <!-- Grab the content from the page data, dump it here, and mark it as safe -->
   <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
   {{ content | safe }}
+
+
+  {# <footer> #}
+   
+      {# {% for item in footer%}
+          <li><a href="{{item.url}}" > {{item.label}}</a></li>
+      {%endfor%} #}
+      {# <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blog">Blog</a></li> #}
+    {# </ul>
+  </nav>
+  </footer> #}
+
+  {% include "partials/footer.njk" %}
+
+
 </body>
 </html>
